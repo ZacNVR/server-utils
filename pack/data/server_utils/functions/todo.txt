@@ -1,0 +1,7 @@
+- 1 sec loop
+- 10 sec loop
+- 1 min loop
+- config function
+- Registration levels
+- Preserve player ID and rego level despite name change
+- Uninstall function

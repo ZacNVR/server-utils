@@ -8,6 +8,11 @@ scoreboard objectives add player_count dummy
 execute store result score current player_count if entity @a
 execute store result score previous player_count if entity @a
 
-summon marker ~ ~ ~ {CustomName:"\"Player ID\""}
-execute as @e[name="Player ID",type=marker] run say Player ID v1.2.1 successfully loaded.
-kill @e[name="Player ID",type=marker]
+#Scoreboard objective for entities owned by a player
+scoreboard objectives add owner_id
+
+#Summon world spawn marker
+execute unless entity @e[type=marker,tag=server_utils,tag=current_spawn] run summon marker ~ ~ ~ {Tags:["server_utils","current_spawn"]}
+forceload add ~ ~
+
+function #server_utils:load
