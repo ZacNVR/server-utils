@@ -15,15 +15,36 @@ scoreboard objectives add owner_id
 scoreboard objectives add server_utils_config
 scoreboard objectives add required_configs
 
+#Put settings to default values
+#-1 = forced off (overrides requirements)
+#0 = off (default)
+#1 = on
+execute unless score 1_sec_loop server_utils_config matches -1..1 run scoreboard players set 1_sec_loop 0
+execute unless score 10_sec_loop server_utils_config matches -1..1 run scoreboard players set 10_sec_loop 0
+execute unless score 1_min_loop server_utils_config matches -1..1 run scoreboard players set 1_min_loop 0
+execute unless score registration server_utils_config matches -1..1 run scoreboard players set registration 0
+
+execute unless score registration_level server_utils_config matches 1.. run scoreboard players set registration_level server_utils_config 1
+
+#Set required configs to 0 (to be increased in #server_utils:load)
 scoreboard players set 1_sec_loop required_configs 0
 scoreboard players set 10_sec_loop required_configs 0
 scoreboard players set 1_min_loop required_configs 0
 scoreboard players set registration required_configs 0
-
-execute unless score registration_level server_utils_config matches 1.. run scoreboard players set registration_level server_utils_config 1
 
 #Summon world spawn marker
 execute unless entity @e[type=marker,tag=server_utils,tag=current_spawn] run summon marker ~ ~ ~ {Tags:["server_utils","current_spawn"]}
 forceload add ~ ~
 
 function #server_utils:load
+
+#Turn on required features that are not forced off
+execute if score 1_sec_loop required_configs matches 1.. unless 1_sec_loop server_utils_config matches -1 run scoreboard players set 1_sec_loop server_utils_config 1
+execute if score 10_sec_loop required_configs matches 1.. unless 10_sec_loop server_utils_config matches -1 run scoreboard players set 10_sec_loop server_utils_config 1
+execute if score 1_min_loop required_configs matches 1.. unless 1_min_loop server_utils_config matches -1 run scoreboard players set 1_min_loop server_utils_config 1
+execute if score registration required_configs matches 1.. unless registration server_utils_config matches -1 run scoreboard players set registration server_utils_config 1
+
+#Begin loops
+execute if score 1_sec_loop server_utils_config matches 1 run function server_utils:loops/1_sec
+execute if score 10_sec_loop server_utils_config matches 1 run function server_utils:loops/10_sec
+execute if score 1_min_loop server_utils_config matches 1 run function server_utils:loops/1_min
