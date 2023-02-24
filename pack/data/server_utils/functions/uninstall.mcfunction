@@ -7,3 +7,5 @@ scoreboard objectives remove server_utils_config
 scoreboard objectives remove required_configs
 
 kill @e[tag=server_utils]
+
+#datapack disable
