@@ -2,7 +2,7 @@
 
 summon chest_minecart ~ -65 ~ {Tags:["inventory","server_utils","current"],Invulnerable:1b,NoGravity:1b}
 summon chest_minecart ~ -65 ~ {Tags:["other","server_utils","current"],Invulnerable:1b,NoGravity:1b}
-execute positioned ~ -65 ~ run scoreboard players operation @e[type=chest_minecart,tag=server_utils,tag=!claimed] player_id = @s player_id
+execute positioned ~ -65 ~ run scoreboard players operation @e[type=chest_minecart,tag=server_utils,tag=!claimed] owner_id = @s player_id
 tag @e[type=chest_minecart,tag=server_utils,tag=!claimed] add claimed
 
 item replace entity @e[type=chest_minecart,tag=server_utils,tag=current,tag=inventory] container.0 from entity @s inventory.0

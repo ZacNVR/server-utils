@@ -1,7 +1,7 @@
 #Run as player to restore inventory
 
 tag @s add current
-execute as @e[type=chest_minecart,tag=server_utils] if score @s player_id = @p[tag=current] player_id run tag @s add current
+execute as @e[type=chest_minecart,tag=server_utils] if score @s owner_id = @p[tag=current] player_id run tag @s add current
 tag @s remove current
 
 item replace entity @s inventory.0 from entity @e[type=chest_minecart,tag=server_utils,tag=current,tag=inventory,limit=1] container.0
