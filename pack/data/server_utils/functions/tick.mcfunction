@@ -1,7 +1,10 @@
 #Called by #minecraft:tick
+
+execute as @a unless score @s server_utils_uuid0 matches ..2147483647 run function server_utils:store_uuid 
+
 execute as @a unless score @s player_id matches 1.. run function server_utils:new_id
 
-execute as @a[tag=!rego] run function #server_utils:new_player
+#execute as @a[tag=!rego] run function #server_utils:new_player
 
 #execute as @a[scores={id_list=1..}] run function server_utils:id_list
 #scoreboard players enable @a id_list

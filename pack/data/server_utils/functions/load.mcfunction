@@ -9,11 +9,17 @@ execute store result score current player_count if entity @a
 execute store result score previous player_count if entity @a
 
 #Scoreboard objective for entities owned by a player
-scoreboard objectives add owner_id
+scoreboard objectives add owner_id dummy
+
+#Scoreboard objectives for UUID comparisions
+scoreboard objectives add server_utils_uuid0 dummy
+scoreboard objectives add server_utils_uuid1 dummy
+scoreboard objectives add server_utils_uuid2 dummy
+scoreboard objectives add server_utils_uuid3 dummy
 
 #Scoreboard objectives for Server Utils configs
-scoreboard objectives add server_utils_config
-scoreboard objectives add required_configs
+scoreboard objectives add server_utils_config dummy
+scoreboard objectives add required_configs dummy
 
 #Put settings to default values
 #-1 = forced off (overrides requirements)

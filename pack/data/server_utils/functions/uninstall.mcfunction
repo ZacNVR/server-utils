@@ -3,6 +3,11 @@ scoreboard objectives remove player_count
 
 scoreboard objectives remove owner_id
 
+scoreboard objectives remove server_utils_uuid0
+scoreboard objectives remove server_utils_uuid1
+scoreboard objectives remove server_utils_uuid2
+scoreboard objectives remove server_utils_uuid3
+
 scoreboard objectives remove server_utils_config
 scoreboard objectives remove required_configs
 
