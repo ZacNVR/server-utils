@@ -8,8 +8,12 @@ scoreboard objectives add player_count dummy
 execute store result score current player_count if entity @a
 execute store result score previous player_count if entity @a
 
+#Scoreboard objective for registration level
+scoreboard objectives add registration_level dummy
+
 #Scoreboard objective for entities owned by a player
 scoreboard objectives add owner_id dummy
+scoreboard objectives add owner_registration_level dummy
 
 #Scoreboard objectives for UUID comparisions
 scoreboard objectives add server_utils_uuid0 dummy
