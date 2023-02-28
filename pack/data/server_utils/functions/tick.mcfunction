@@ -17,4 +17,4 @@ execute as @a run function server_utils:check_player_joined
 execute as @e[type=marker,tag=player_tracker,tag=online] run function server_utils:check_player_leave
 
 #World spawn checking
-execute if entity @e[type=marker,tag=current_spawn,distance=0..0.1] run function server_utils:spawn_changed
+execute unless entity @e[type=marker,tag=current_spawn,distance=0..0.1] run function server_utils:spawn_changed
