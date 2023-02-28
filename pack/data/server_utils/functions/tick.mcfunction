@@ -10,14 +10,11 @@ execute if score registration server_utils_config matches 1 as @a unless score @
 #scoreboard players enable @a id_list
 #scoreboard players set @a id_list 0
 
-execute store result score current player_count if entity @a
-execute store success score new_player player_count if score current player_count > previous player_count
-execute if score new_player player_count matches 1 as @a run function server_utils:tag_new_player
-execute if score new_player player_count matches 1 as @a[tag=newest] at @s run function #server_utils:player_join
+#Player joining mechanism
+execute as @a run function server_utils:check_player_joined
 
-execute if score current player_count < previous player_count run function #server_utils:player_leave
-
-scoreboard players operation previous player_count = current player_count
+#Player leaving mechanism
+execute as @e[type=marker,tag=player_tracker,tag=online] unless score @a player_id = @s owner_id run function server_utils:player_leave
 
 #World spawn checking
 execute if entity @e[type=marker,tag=current_spawn,distance=0..0.1] run function server_utils:spawn_changed

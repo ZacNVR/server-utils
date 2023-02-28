@@ -4,10 +4,6 @@ execute unless score counter player_id matches 1.. run scoreboard players add #c
 
 #scoreboard objectives add id_list trigger
 
-scoreboard objectives add player_count dummy
-execute store result score current player_count if entity @a
-execute store result score previous player_count if entity @a
-
 #Scoreboard objective for registration level
 scoreboard objectives add registration_level dummy
 
