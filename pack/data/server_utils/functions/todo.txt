@@ -1,3 +1,1 @@
-- Registration levels
-- Preserve player ID and rego level despite name change
-- Uninstall function
+- Test

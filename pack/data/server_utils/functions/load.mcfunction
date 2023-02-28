@@ -1,6 +1,6 @@
 #Called by #minecraft:load
 scoreboard objectives add player_id dummy {"text":"Player ID"}
-execute unless score counter player_id matches 1.. run scoreboard players add #counter player_id 1
+execute unless score #counter player_id matches 1.. run scoreboard players add #counter player_id 1
 
 #scoreboard objectives add id_list trigger
 
@@ -25,10 +25,10 @@ scoreboard objectives add required_configs dummy
 #-1 = forced off (overrides requirements)
 #0 = off (default)
 #1 = on
-execute unless score 1_sec_loop server_utils_config matches -1..1 run scoreboard players set 1_sec_loop 0
-execute unless score 10_sec_loop server_utils_config matches -1..1 run scoreboard players set 10_sec_loop 0
-execute unless score 1_min_loop server_utils_config matches -1..1 run scoreboard players set 1_min_loop 0
-execute unless score registration server_utils_config matches -1..1 run scoreboard players set registration 0
+execute unless score 1_sec_loop server_utils_config matches -1..1 run scoreboard players set 1_sec_loop server_utils_config 0
+execute unless score 10_sec_loop server_utils_config matches -1..1 run scoreboard players set 10_sec_loop server_utils_config 0
+execute unless score 1_min_loop server_utils_config matches -1..1 run scoreboard players set 1_min_loop server_utils_config 0
+execute unless score registration server_utils_config matches -1..1 run scoreboard players set registration server_utils_config 0
 
 execute unless score registration_level server_utils_config matches 1.. run scoreboard players set registration_level server_utils_config 1
 
