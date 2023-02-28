@@ -2,7 +2,11 @@
 scoreboard objectives add player_id dummy {"text":"Player ID"}
 execute unless score #counter player_id matches 1.. run scoreboard players add #counter player_id 1
 
-#scoreboard objectives add id_list trigger
+#Updates from Player ID v1
+execute if score counter player_id matches 1.. run scoreboard players operation #counter player_id = counter player_id
+execute if score counter player_id matches 1.. run scoreboard players reset counter player_id
+
+#scoreboard objectives add id_list trigger (unused)
 
 #Scoreboard objective for registration level
 scoreboard objectives add registration_level dummy
