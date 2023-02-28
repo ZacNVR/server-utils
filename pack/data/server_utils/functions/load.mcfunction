@@ -49,10 +49,10 @@ forceload add ~ ~
 function #server_utils:load
 
 #Turn on required features that are not forced off
-execute if score 1_sec_loop required_configs matches 1.. unless 1_sec_loop server_utils_config matches -1 run scoreboard players set 1_sec_loop server_utils_config 1
-execute if score 10_sec_loop required_configs matches 1.. unless 10_sec_loop server_utils_config matches -1 run scoreboard players set 10_sec_loop server_utils_config 1
-execute if score 1_min_loop required_configs matches 1.. unless 1_min_loop server_utils_config matches -1 run scoreboard players set 1_min_loop server_utils_config 1
-execute if score registration required_configs matches 1.. unless registration server_utils_config matches -1 run scoreboard players set registration server_utils_config 1
+execute if score 1_sec_loop required_configs matches 1.. unless score 1_sec_loop server_utils_config matches -1 run scoreboard players set 1_sec_loop server_utils_config 1
+execute if score 10_sec_loop required_configs matches 1.. unless score 10_sec_loop server_utils_config matches -1 run scoreboard players set 10_sec_loop server_utils_config 1
+execute if score 1_min_loop required_configs matches 1.. unless score 1_min_loop server_utils_config matches -1 run scoreboard players set 1_min_loop server_utils_config 1
+execute if score registration required_configs matches 1.. unless score registration server_utils_config matches -1 run scoreboard players set registration server_utils_config 1
 
 #Begin loops
 execute if score 1_sec_loop server_utils_config matches 1 run function server_utils:loops/1_sec
