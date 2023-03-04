@@ -6,6 +6,10 @@ execute unless score #counter player_id matches 1.. run scoreboard players add #
 execute if score counter player_id matches 1.. run scoreboard players operation #counter player_id = counter player_id
 execute if score counter player_id matches 1.. run scoreboard players reset counter player_id
 
+#Fix issue from v2.0.0
+tag @e[type=marker,tag=player_id] add server_utils
+tag @e[type=marker,tag=player_id] remove player_id
+
 #scoreboard objectives add id_list trigger (unused)
 
 #Scoreboard objective for registration level
