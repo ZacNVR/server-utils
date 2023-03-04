@@ -6,10 +6,6 @@ execute unless score #counter player_id matches 1.. run scoreboard players add #
 execute if score counter player_id matches 1.. run scoreboard players operation #counter player_id = counter player_id
 execute if score counter player_id matches 1.. run scoreboard players reset counter player_id
 
-#Fix issue from v2.0.0
-tag @e[type=marker,tag=player_id] add server_utils
-tag @e[type=marker,tag=player_id] remove player_id
-
 #scoreboard objectives add id_list trigger (unused)
 
 #Scoreboard objective for registration level
@@ -46,11 +42,14 @@ scoreboard players set 10_sec_loop required_configs 0
 scoreboard players set 1_min_loop required_configs 0
 scoreboard players set registration required_configs 0
 
-#Summon world spawn marker
-execute unless entity @e[type=marker,tag=server_utils,tag=current_spawn] run summon marker ~ ~ ~ {Tags:["server_utils","current_spawn"]}
-forceload add ~ ~
-
 function #server_utils:load
+
+#Run functions after world spawn loads
+#Runs server_utils:check_spawn_loaded in Minecraft 1.19.4+, waits one second in older versions
+scoreboard objectives add version_check dummy
+execute store success score version_check version_check run function server_utils:check_spawn_loaded
+execute if score version_check version_check matches 0 run schedule function server_utils:spawn_loaded 1s
+scoreboard objectives remove version_check
 
 #Turn on required features that are not forced off
 execute if score 1_sec_loop required_configs matches 1.. unless score 1_sec_loop server_utils_config matches -1 run scoreboard players set 1_sec_loop server_utils_config 1
