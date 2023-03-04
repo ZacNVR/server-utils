@@ -1,4 +1,4 @@
-#Called by server_utils:new_player
+#Called by server_utils:new_player_checks
 #Running as player-tracking marker, player has tag "server_utils_cursor0"
 scoreboard players operation @p[tag=server_utils_cursor0] player_id = @s owner_id
 scoreboard players operation @p[tag=server_utils_cursor0] registration_level = @s owner_registration_level

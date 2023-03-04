@@ -1,4 +1,4 @@
-#Called by server_utils:new_player
+#Called by server_utils:new_player_setup
 #Running as @p[tag=server_utils_cursor0,tag=!server_utils_cursor1]
 
 summon marker ~ ~ ~ {Tags:["player_id","spawnlocked","player_tracker","server_utils_cursor2"]}

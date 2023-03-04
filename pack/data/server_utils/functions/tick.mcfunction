@@ -1,7 +1,7 @@
 #Called by #minecraft:tick
 
 #The following handles player ID and corresponding marker
-execute as @a unless score @s server_utils_uuid0 matches ..2147483647 run function server_utils:new_player
+execute as @a run function server_utils:new_player_checks
 
 #Registration
 execute if score registration server_utils_config matches 1 as @a unless score @s registration_level >= registration_level server_utils_config run function server_utils:register_player
