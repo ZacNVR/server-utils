@@ -25,6 +25,9 @@ scoreboard objectives add server_utils_uuid3 dummy
 scoreboard objectives add server_utils_config dummy
 scoreboard objectives add required_configs dummy
 
+#Scoreboard objective for fixing excess Spawn markers
+scoreboard objectives add spawn_marker_count dummy
+
 #Put settings to default values
 #-1 = forced off (overrides requirements)
 #0 = off (default)
