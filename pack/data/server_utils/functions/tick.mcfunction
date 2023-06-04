@@ -18,5 +18,5 @@ execute as @e[type=marker,tag=player_tracker,tag=online] run function server_uti
 
 #World spawn checking
 execute store result score spawn_marker_count spawn_marker_count if entity @e[type=marker,tag=current_spawn]
-execute if score spawn_marker_count spawn_marker_count 2.. run function server_utils:kill_excess_spawn_markers
+execute if score spawn_marker_count spawn_marker_count matches 2.. run function server_utils:kill_excess_spawn_markers
 execute unless entity @e[type=marker,tag=current_spawn,distance=0..0.1] run function server_utils:spawn_changed
