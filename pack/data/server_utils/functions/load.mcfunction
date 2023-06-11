@@ -6,6 +6,10 @@ execute unless score #counter player_id matches 1.. run scoreboard players add #
 execute if score counter player_id matches 1.. run scoreboard players operation #counter player_id = counter player_id
 execute if score counter player_id matches 1.. run scoreboard players reset counter player_id
 
+#Removes obsolete objectives from previous versions
+scoreboard objectives remove player_count
+scoreboard objectives remove spawn_marker_count
+
 #scoreboard objectives add id_list trigger (unused)
 
 #Scoreboard objective for registration level
@@ -25,8 +29,8 @@ scoreboard objectives add server_utils_uuid3 dummy
 scoreboard objectives add server_utils_config dummy
 scoreboard objectives add required_configs dummy
 
-#Scoreboard objective for fixing excess Spawn markers
-scoreboard objectives add spawn_marker_count dummy
+#Scoreboard objective for internal variables
+scoreboard objectives add server_utils_var dummy
 
 #Put settings to default values
 #-1 = forced off (overrides requirements)
@@ -48,11 +52,10 @@ scoreboard players set registration required_configs 0
 function #server_utils:load
 
 #Run functions after world spawn loads
-#Runs server_utils:check_spawn_loaded in Minecraft 1.19.4+, waits one second in older versions
-scoreboard objectives add version_check dummy
-execute store success score version_check version_check run function server_utils:check_spawn_loaded
-execute if score version_check version_check matches 0 run schedule function server_utils:spawn_loaded 1s
-scoreboard objectives remove version_check
+#Runs server_utils:check_spawn_loaded in Minecraft 1.20+, waits one second in older versions
+execute store success score version_check server_utils_var run function server_utils:check_spawn_loaded
+execute if score version_check server_utils_var matches 0 run schedule function server_utils:spawn_loaded 1s
+scoreboard players reset version_check server_utils_var
 
 #Turn on required features that are not forced off
 execute if score 1_sec_loop required_configs matches 1.. unless score 1_sec_loop server_utils_config matches -1 run scoreboard players set 1_sec_loop server_utils_config 1

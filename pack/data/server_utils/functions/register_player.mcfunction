@@ -1,4 +1,4 @@
-#Called by server_utils:tick
+#Called by server_utils:player_joined
 #Running as player to be registered
 
 function #server_utils:register_player

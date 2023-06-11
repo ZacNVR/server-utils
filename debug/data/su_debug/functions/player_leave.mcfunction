@@ -1,0 +1,1 @@
+tellraw @a[tag=su_debug] [{"text":"[Server Utilities] #server_utils:player_leave was called for player of ID "},{"score":{"objective":"owner_id","name":"@s"}}]

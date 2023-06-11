@@ -4,8 +4,11 @@
 tag @e[type=marker,tag=player_id] add server_utils
 tag @e[type=marker,tag=player_id] remove player_id
 
+#Kill excess spawn markers
+kill @e[type=marker,tag=server_utils,tag=current_spawn]
+
 #Summon world spawn marker
-execute unless entity @e[type=marker,tag=server_utils,tag=current_spawn] run summon marker ~ ~ ~ {Tags:["server_utils","current_spawn"]}
+summon marker ~ ~ ~ {Tags:["server_utils","current_spawn"]}
 forceload add ~ ~
 
 function #server_utils:spawn_loaded
