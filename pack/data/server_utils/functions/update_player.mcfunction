@@ -5,5 +5,6 @@ scoreboard players operation @p[tag=server_utils_cursor0] registration_level = @
 
 tag @s add current_player
 tag @p[tag=server_utils_cursor0] add current_player
+execute as @p[tag=current_player] run function server_utils:store_username
 execute as @p[tag=current_player] run function #server_utils:player_changed_name
 tag @e[tag=current_player] remove current_player
