@@ -1,1 +1,0 @@
-tellraw @s [{"score":{"name":"id_list","objective":"player_id"}},{"text":": "},{}]

@@ -10,7 +10,12 @@ execute if score counter player_id matches 1.. run scoreboard players reset coun
 scoreboard objectives remove player_count
 scoreboard objectives remove spawn_marker_count
 
-#scoreboard objectives add id_list trigger (unused)
+#Triggers
+scoreboard objectives add list_ids trigger
+scoreboard objectives add list_all_ids trigger
+scoreboard objectives add get_username trigger
+
+scoreboard objectives add id_list_page dummy
 
 #Scoreboard objective for registration level
 scoreboard objectives add registration_level dummy
@@ -31,6 +36,7 @@ scoreboard objectives add required_configs dummy
 
 #Scoreboard objective for internal variables
 scoreboard objectives add server_utils_var dummy
+execute unless score ids_per_page server_utils_var matches 1.. run scoreboard players set ids_per_page server_utils_var 10
 
 #Put settings to default values
 #-1 = forced off (overrides requirements)
@@ -42,6 +48,10 @@ execute unless score 1_min_loop server_utils_config matches -1..1 run scoreboard
 execute unless score registration server_utils_config matches -1..1 run scoreboard players set registration server_utils_config 0
 
 execute unless score registration_level server_utils_config matches 1.. run scoreboard players set registration_level server_utils_config 1
+
+execute unless score list_ids server_utils_config matches 0..1 scoreboard players set list_ids server_utils_config 0
+execute unless score list_all_ids server_utils_config matches 0..1 scoreboard players set list_all_ids server_utils_config 0
+execute unless score get_username server_utils_config matches 0..1 scoreboard players set get_username server_utils_config 0
 
 #Set required configs to 0 (to be increased in #server_utils:load)
 scoreboard players set 1_sec_loop required_configs 0

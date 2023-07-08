@@ -2,6 +2,10 @@ scoreboard objectives remove player_id
 
 scoreboard objectives remove owner_id
 
+scoreboard objectives remove list_ids
+scoreboard objectives remove list_all_ids
+scoreboard objectives remove get_username
+
 scoreboard objectives remove registration_level
 scoreboard objectives remove owner_registration_level
 

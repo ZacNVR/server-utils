@@ -10,4 +10,3 @@ execute unless score @s player_id matches 0.. run function server_utils:new_id
 
 tag @s[tag=server_utils_cursor2] remove server_utils_cursor2
 function server_utils:spawn_player_marker
-function server_utils:store_username
