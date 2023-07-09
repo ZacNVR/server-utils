@@ -7,8 +7,8 @@ tag @e[type=marker,tag=player_id] remove player_id
 #Update player-tracking markers with username
 execute as @e[type=marker,tag=server_utils,tag=player_tracker] unless data entity @s data.username run data modify entity @s data.username set value '"Unknown"'
 
-#Fix player-tracking markers with ID of zero. This will fix their corresponding players
-execute as @e[type=marker,tag=server_utils,tag=player_tracker] if score @s owner_id matches 0 run function server_utils:fix_id
+#Kill player-tracking markers with ID of zero (or less)
+kill @e[type=marker,tag=server_utils,tag=player_tracker,scores={owner_id=..0}]
 
 #Kill excess spawn markers
 kill @e[type=marker,tag=server_utils,tag=current_spawn]
