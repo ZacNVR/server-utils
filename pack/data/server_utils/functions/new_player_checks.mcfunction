@@ -7,5 +7,8 @@ execute as @e[type=marker,tag=server_utils,tag=player_tracker] if score @s serve
 
 execute as @e[type=marker,tag=server_utils,tag=player_tracker] if score @s owner_id = @p[tag=server_utils_cursor0] player_id run tag @p[tag=server_utils_cursor0] add server_utils_cursor1
 execute as @s[tag=server_utils_cursor0,tag=!server_utils_cursor1] run function server_utils:new_player_setup
+
+function server_utils:store_username
+
 tag @s remove server_utils_cursor1
 tag @s remove server_utils_cursor0

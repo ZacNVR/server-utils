@@ -24,3 +24,14 @@ execute if score registration required_configs matches 1.. if score registration
 
 tellraw @s [{"text":"Registration level","color":"gray"},{"text":" - ","color":"dark_gray"},{"text":"<<","clickEvent":{"action":"run_command","value":"/function server_utils:registration/level_down"}}," ",{"score":{"objective":"server_utils_config","name":"registration_level"},"color":"gold"}," ",{"text":">>","clickEvent":{"action":"run_command","value":"/function server_utils:registration/level_up"}}]
 tellraw @s ""
+
+execute if score get_username server_utils_config matches 0 run tellraw @s [{"text":"\"get_username\" trigger","color":"gray"},{"text":" - ","color":"dark_gray"},{"text":"[ON]","color":"green","clickEvent":{"action":"run_command","value":"/function server_utils:triggers/get_username/on"}}," ",{"text":"[OFF]","color":"red","bold":true}]
+execute if score get_username server_utils_config matches 1 run tellraw @s [{"text":"\"get_username\" trigger","color":"gray"},{"text":" - ","color":"dark_gray"},{"text":"[ON]","color":"green","bold":true}," ",{"text":"[OFF]","color":"red","clickEvent":{"action":"run_command","value":"/function server_utils:triggers/get_username/off"}}]
+
+execute if score list_ids server_utils_config matches 0 run tellraw @s [{"text":"\"list_ids\" trigger","color":"gray"},{"text":" - ","color":"dark_gray"},{"text":"[ON]","color":"green","clickEvent":{"action":"run_command","value":"/function server_utils:triggers/list_ids/on"}}," ",{"text":"[OFF]","color":"red","bold":true}]
+execute if score list_ids server_utils_config matches 1 run tellraw @s [{"text":"\"list_ids\" trigger","color":"gray"},{"text":" - ","color":"dark_gray"},{"text":"[ON]","color":"green","bold":true}," ",{"text":"[OFF]","color":"red","clickEvent":{"action":"run_command","value":"/function server_utils:triggers/list_ids/off"}}]
+
+execute if score list_all_ids server_utils_config matches 0 run tellraw @s [{"text":"\"list_all_ids\" trigger","color":"gray"},{"text":" - ","color":"dark_gray"},{"text":"[ON]","color":"green","clickEvent":{"action":"run_command","value":"/function server_utils:triggers/list_all_ids/on"}}," ",{"text":"[OFF]","color":"red","bold":true}]
+execute if score list_all_ids server_utils_config matches 1 run tellraw @s [{"text":"\"list_all_ids\" trigger","color":"gray"},{"text":" - ","color":"dark_gray"},{"text":"[ON]","color":"green","bold":true}," ",{"text":"[OFF]","color":"red","clickEvent":{"action":"run_command","value":"/function server_utils:triggers/list_all_ids/off"}}]
+
+tellraw @s ""
