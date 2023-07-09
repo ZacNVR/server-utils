@@ -1,5 +1,5 @@
 #Called by server_utils:triggers/list_all_ids
-tellraw @s [{"text":"====","color":"gold"},{"text":" Player IDs ","color":"yellow"},"===="]
+tellraw @s [{"text":"\n====","color":"gold"},{"text":" Player IDs ","color":"yellow"},"===="]
 scoreboard players operation list_id server_utils_var = @s id_list_page
 scoreboard players remove list_id server_utils_var 1
 scoreboard players operation list_id server_utils_var *= ids_per_page server_utils_var
