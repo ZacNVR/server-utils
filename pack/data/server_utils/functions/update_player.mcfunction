@@ -2,6 +2,7 @@
 #Running as player-tracking marker, player has tag "server_utils_cursor0"
 scoreboard players operation @p[tag=server_utils_cursor0] player_id = @s owner_id
 scoreboard players operation @p[tag=server_utils_cursor0] registration_level = @s owner_registration_level
+scoreboard players operation current_id server_utils_var = @s owner_id
 
 tag @s add current_player
 tag @p[tag=server_utils_cursor0] add current_player

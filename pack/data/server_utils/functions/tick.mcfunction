@@ -26,4 +26,4 @@ scoreboard players reset @a get_username
 execute if score get_username server_utils_config matches 1 run scoreboard players enable @a get_username
 
 #World spawn checking
-execute unless entity @e[type=marker,tag=current_spawn,distance=0..0.1] run function server_utils:spawn_changed
+execute if entity @e[type=marker,tag=current_spawn] unless entity @e[type=marker,tag=current_spawn,distance=0..0.1] run function server_utils:spawn_changed

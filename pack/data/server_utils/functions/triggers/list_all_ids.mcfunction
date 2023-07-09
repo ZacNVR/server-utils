@@ -12,7 +12,7 @@ scoreboard players operation id_list_pages server_utils_var /= ids_per_page serv
 
 scoreboard players set input_type server_utils_var 0
 execute if score @s list_all_ids matches -2..-1 run scoreboard players operation input_type server_utils_var = @s list_all_ids
-execute if score @s list_all_ids >= id_list_pages server_utils_var run scoreboard players set input_type server_utils_var 1
+execute if score @s list_all_ids matches 1.. if score @s list_all_ids > id_list_pages server_utils_var run scoreboard players set input_type server_utils_var 1
 
 execute if score input_type server_utils_var matches -2 run function server_utils:triggers/list_all_ids/decrease
 execute if score input_type server_utils_var matches -1 run function server_utils:triggers/list_all_ids/increase
