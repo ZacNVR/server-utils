@@ -1,6 +1,10 @@
 {
     "pack": {
-        "pack_format": 10,
-        "description": "Server Utilities debugger. Created by ZacNVR"
+        "pack_format": 15,
+        "description": "Server Utilities debugger. Created by ZacNVR",
+		"supported_formats": {
+			"min_inclusive": 8,
+			"max_inclusive": 48
+		}
     }
 }
