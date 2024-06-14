@@ -1,3 +1,0 @@
-#Called by server_utils:registration:level_down
-scoreboard players remove registration_level server_utils_config 1
-function server_utils:config
