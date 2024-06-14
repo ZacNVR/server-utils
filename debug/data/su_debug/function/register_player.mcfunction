@@ -1,0 +1,1 @@
+tellraw @a[tag=su_debug] [{"text":"[Server Utilities] #server_utils:register_player was called for "},{"selector":"@s"}]
