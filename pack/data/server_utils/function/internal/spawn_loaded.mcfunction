@@ -1,4 +1,4 @@
-#Called by server_utils:check_spawn_loaded, server_utils:load
+#Called by server_utils:internal/check_spawn_loaded, server_utils:internal/load
 
 #Fix issue from v2.0.0
 tag @e[type=marker,tag=player_id] add server_utils

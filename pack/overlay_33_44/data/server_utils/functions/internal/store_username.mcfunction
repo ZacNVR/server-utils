@@ -1,4 +1,4 @@
-#Called by server_utils:new_player_checks, server_utils:update_player
+#Called by server_utils:internal/new_player_checks, server_utils:internal/update_player
 #Running as player
 scoreboard players operation name_id server_utils_var = @s player_id
 summon armor_stand ~ -66 ~ {Marker:1b,NoGravity:1b,HandItems:[{id:"minecraft:stone",Count:1b},{}],Invisible:1b,Tags:["server_utils","name_storage"]}

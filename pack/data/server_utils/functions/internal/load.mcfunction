@@ -63,8 +63,8 @@ function #server_utils:load
 
 #Run functions after world spawn loads
 #Runs server_utils:check_spawn_loaded in Minecraft 1.20+, waits one second in older versions
-execute store success score version_check server_utils_var run function server_utils:check_spawn_loaded
-execute if score version_check server_utils_var matches 0 run schedule function server_utils:spawn_loaded 1s
+execute store success score version_check server_utils_var run function server_utils:internal/check_spawn_loaded
+execute if score version_check server_utils_var matches 0 run schedule function server_utils:internal/spawn_loaded 1s
 scoreboard players reset version_check server_utils_var
 
 #Turn on required features that are not forced off

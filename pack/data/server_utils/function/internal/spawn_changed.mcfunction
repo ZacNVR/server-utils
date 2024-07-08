@@ -1,4 +1,4 @@
-#Called by server_utils:tick
+#Called by server_utils:internal/tick
 
 #Teleport entites
 tp @e[tag=spawnlocked] ~ ~ ~
