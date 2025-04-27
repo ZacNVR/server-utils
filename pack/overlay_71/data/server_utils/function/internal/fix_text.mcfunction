@@ -1,0 +1,1 @@
+$data modify storage server_utils:fix_text output set value $(input)
