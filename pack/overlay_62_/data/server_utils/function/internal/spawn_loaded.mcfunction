@@ -8,7 +8,7 @@ tag @e[type=marker,tag=player_id] remove player_id
 execute as @e[type=marker,tag=server_utils,tag=player_tracker] run function server_utils:internal/check_marker_username
 
 #Update player-tracking markers with username
-execute as @e[type=marker,tag=server_utils,tag=player_tracker] unless data entity @s data.username run data modify entity @s data.username set value '"Unknown"'
+execute as @e[type=marker,tag=server_utils,tag=player_tracker] unless data entity @s data.username run data modify entity @s data.username set value 'Unknown'
 
 #Kill player-tracking markers with ID of zero (or less)
 kill @e[type=marker,tag=server_utils,tag=player_tracker,scores={owner_id=..0}]

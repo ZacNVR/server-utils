@@ -4,6 +4,9 @@
 tag @e[type=marker,tag=player_id] add server_utils
 tag @e[type=marker,tag=player_id] remove player_id
 
+#Set text format in player-tracking markers
+execute as @e[type=marker,tag=server_utils,tag=player_tracker] run function server_utils:internal/check_marker_username
+
 #Update player-tracking markers with username
 execute as @e[type=marker,tag=server_utils,tag=player_tracker] unless data entity @s data.username run data modify entity @s data.username set value '"Unknown"'
 

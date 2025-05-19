@@ -17,8 +17,20 @@
                 "directory": "overlay_33_44"
             },
             {
-                "formats": 71,
-                "directory": "overlay_71"
+                "formats": {
+                    "min_inclusive": 62,
+                    "max_inclusive": 2147483647
+                },
+                "directory": "overlay_62_",
+                "description": "Accounts for changes from JSON to SNBT text format. Includes text fixing functionality."
+            },
+            {
+                "formats": {
+                    "min_inclusive": 63,
+                    "max_inclusive": 2147483647
+                },
+                "directory": "overlay_63_",
+                "description": "Accounts for changes to equipment NBT and \"show_text\" hover events."
             }
         ]
     }
