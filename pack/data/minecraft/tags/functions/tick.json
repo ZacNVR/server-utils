@@ -1,5 +1,5 @@
 {
     "values": [
-        "server_utils:tick"
+        "server_utils:internal/tick"
     ]
 }

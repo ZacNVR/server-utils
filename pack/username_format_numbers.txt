@@ -1,0 +1,8 @@
+The player-tracking markers store their player's username in their data.username NBT field.
+With that, they also store the format of the text provided.
+This is used to upgrade the text when necessary
+
+These text format numbers correspond to the minimum compatible pack format:
+8: 1.18-1.21.4 (21w37a-1.21.4)
+62: 25w02a
+63: 1.21.5 (25w03a-1.21.5)
