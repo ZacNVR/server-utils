@@ -13,7 +13,7 @@ The most recent version is designed to work from Minecraft 1.18 to 1.21.6.
 - Detects when a player leaves the server
 - Tracks the world's spawn point
 - Inventory clearing and restoring system
-- Function macros for upgrading JSON text components (stored in NBT) to the new SNBT format (1.21.5 only)
+- Function macros for upgrading JSON text components (stored in NBT) to the new SNBT format (1.21.5+ only)
 
 Optional features (configurable):
 - Command loops for 1 second, 10 seconds and 1 minute
