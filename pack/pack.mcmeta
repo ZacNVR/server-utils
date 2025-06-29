@@ -3,9 +3,9 @@
         "pack_format": 15,
         "supported_formats": {
             "min_inclusive": 8,
-            "max_inclusive": 80
+            "max_inclusive": 81
         },
-        "description": "Server Utilities v2.2.1. Created by ZacNVR"
+        "description": "Server Utilities v2.2.2. Created by ZacNVR"
     },
     "overlays": {
         "entries": [
